@@ -1,4 +1,4 @@
-#include "Dxl.h"
+#include "../include/Dxl/Dxl.h"
 
 Dxl::Dxl(int a, const char *port)
 {
@@ -8,6 +8,7 @@ Dxl::Dxl(int a, const char *port)
     portHandler->openPort();
     portHandler->setBaudRate(1000000);
 }
+
 int Dxl::enable_torque()
 {
     dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, id, 24, 1, &dxl_error);
